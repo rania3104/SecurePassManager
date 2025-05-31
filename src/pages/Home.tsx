@@ -123,17 +123,18 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t">
+      <footer className="py-8 px-6 border-t bg-primary text-primary-foreground">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <Shield className="h-5 w-5 text-primary" />
+            <Shield className="h-5 w-5 text-primary-foreground" />
             <span className="text-lg font-bold">Secure Pass</span>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-primary-foreground">
             &copy; Secure Pass 2025.
           </div>
         </div>
       </footer>
+
     </div>
   );
 }
