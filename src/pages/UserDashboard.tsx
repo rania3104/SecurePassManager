@@ -3,7 +3,6 @@ import { usePasswords } from "@/context/PasswordContext";
 import { AppLayout } from "@/components/AppLayout";
 import { PasswordCard } from "@/components/PasswordCard";
 import { Button } from "@/components/radix-ui comp/button";
-import { Input } from "@/components/radix-ui comp/input";
 import { useNavigate } from "react-router-dom";
 import { PlusCircle } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -27,7 +26,6 @@ export default function DashboardPage() {
             <h1 className="text-3xl font-bold">Password Vault</h1>
             <p className="text-muted-foreground">Manage your secure passwords</p>
           </div>
-{/*search function*/}
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             {/*add password button*/}
             <Button onClick={() => navigate("/dashboard/add")}>
@@ -57,10 +55,9 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-16 text-center">
-            <Button onClick={() => navigate("/dashboard/add")}>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add Password
-            </Button>
+            <p className="text-lg text-muted-foreground mb-4">
+              No passwords found.
+              </p>
           </div>
         )}
       </div>
