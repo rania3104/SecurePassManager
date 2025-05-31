@@ -122,18 +122,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* call to action section */}
-      <section className="py-16 px-6 md:py-24 md:px-10 bg-gradient-to-r from-primary/20 to-secondary/20 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to secure your passwords?
-          </h2>
-          <Button size="lg" className="px-8" onClick={() => navigate("/register")}>
-            Start Now
-          </Button>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="py-8 px-6 border-t">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -142,7 +130,7 @@ export default function LandingPage() {
             <span className="text-lg font-bold">Secure Pass</span>
           </div>
           <div className="text-sm text-muted-foreground">
-            &copy; Secure Pass. 2025.
+            &copy; Secure Pass 2025.
           </div>
         </div>
       </footer>
