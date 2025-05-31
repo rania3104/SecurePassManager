@@ -28,29 +28,6 @@ export default function DashboardPage() {
             <h1 className="text-3xl font-bold">Password Vault</h1>
             <p className="text-muted-foreground">Manage your secure passwords</p>
           </div>
-{/*search function*/}
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            {isSearchOpen ? (
-              <div className="relative w-full sm:w-auto">
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search passwords..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-9 w-full"
-                  autoFocus
-                  onBlur={() => {
-                    if (!searchTerm) {
-                      setIsSearchOpen(false);
-                    }
-                  }}
-                />
-              </div>
-            ) : (
-              <Button variant="outline" size="icon" onClick={() => setIsSearchOpen(true)}>
-                <Search className="h-4 w-4" />
-              </Button>
-            )}
             {/*add password button*/}
             <Button onClick={() => navigate("/dashboard/add")}>
               <PlusCircle className="h-4 w-4 mr-2" />
