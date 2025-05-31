@@ -30,7 +30,6 @@ export default function SettingsPage() {
   //alert for logout confirmation
   const handleLogoutConfirm = () => {
     logout();
-    toast.info("You have been logged out");
     navigate("/");
   };
 

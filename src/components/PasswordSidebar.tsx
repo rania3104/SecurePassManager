@@ -54,7 +54,7 @@ export function PasswordSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="flex items-center px-4 py-2">
+      <SidebarHeader className="flex items-center px-4 py-4">
         <div className="flex items-center space-x-2">
           <Shield className="h-6 w-6 text-primary" />
           <span className="text-lg font-bold">Secure Pass</span>
