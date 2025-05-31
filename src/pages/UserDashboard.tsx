@@ -5,13 +5,12 @@ import { PasswordCard } from "@/components/PasswordCard";
 import { Button } from "@/components/radix-ui comp/button";
 import { Input } from "@/components/radix-ui comp/input";
 import { useNavigate } from "react-router-dom";
-import { PlusCircle, Search } from "lucide-react";
+import { PlusCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { getGeolocation } from "../api&utils/api";
 
 export default function DashboardPage() {
-  const { filteredPasswords, deletePassword, searchTerm, setSearchTerm } = usePasswords();
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const { filteredPasswords, deletePassword } = usePasswords();
   const navigate = useNavigate();
 
   const [location, setLocation] = useState<{ city: string; country_name: string; ip: string } | null>(null);
@@ -28,6 +27,8 @@ export default function DashboardPage() {
             <h1 className="text-3xl font-bold">Password Vault</h1>
             <p className="text-muted-foreground">Manage your secure passwords</p>
           </div>
+{/*search function*/}
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             {/*add password button*/}
             <Button onClick={() => navigate("/dashboard/add")}>
               <PlusCircle className="h-4 w-4 mr-2" />
@@ -56,15 +57,6 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-16 text-center">
-            <div className="mb-4 p-4 rounded-full bg-muted">
-              <Search className="h-6 w-6 text-muted-foreground" />
-            </div>
-            <h3 className="text-lg font-medium mb-2">No passwords found</h3>
-            <p className="text-muted-foreground mb-4">
-              {searchTerm
-                ? "No passwords match your search criteria."
-                : "You haven't added any passwords yet."}
-            </p>
             <Button onClick={() => navigate("/dashboard/add")}>
               <PlusCircle className="h-4 w-4 mr-2" />
               Add Password
